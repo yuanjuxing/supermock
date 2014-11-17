@@ -18,24 +18,9 @@ public class HttpRequestHandler implements RequestHandler{
 
     private volatile boolean tunneling = false;
     protected volatile long lastReadTime = 0;
-    /**
-     * Read is invoked automatically by Netty as messages arrive on the socket.
-     * 
-     * @param msg
-     */
-    protected void read(Object msg) {
-        LOG.debug("Reading: {}", msg);
+    
 
-        lastReadTime = System.currentTimeMillis();
-
-        if (tunneling) {
-            // In tunneling mode, this connection is simply shoveling bytes
-            readRaw((ByteBuf) msg);
-        } else {
-            // If not tunneling, then we are always dealing with HttpObjects.
-            readHTTP((HttpObject) msg);
-        }
-    }
+   
     
     
 
