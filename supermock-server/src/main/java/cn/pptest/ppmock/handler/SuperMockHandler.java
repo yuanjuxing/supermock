@@ -9,7 +9,7 @@ import cn.pptest.ppmock.SuperMockMonitor;
 import cn.pptest.ppmock.model.DefaultHttpRequest;
 import cn.pptest.ppmock.model.HttpRequest;
 
-public class SuperMockHandler extends SimpleChannelInboundHandler<FullHttpRequest>{
+public class SuperMockHandler extends SimpleChannelInboundHandler<Object>{
 
 	
 	private RequestHandler requestHandler;
@@ -29,12 +29,13 @@ public class SuperMockHandler extends SimpleChannelInboundHandler<FullHttpReques
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg)
 			throws Exception {
-		handleRequest((FullHttpRequest)msg);
+		requestHandler.handle(msg);
+		//handleRequest((FullHttpRequest)msg);
 		
 	}
 
 	@Override
-	protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest msg)
+	protected void channelRead0(ChannelHandlerContext ctx, Object msg)
 			throws Exception {
 		handleRequest((FullHttpRequest)msg);
 	}
