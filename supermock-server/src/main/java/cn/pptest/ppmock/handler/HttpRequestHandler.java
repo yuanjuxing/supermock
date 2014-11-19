@@ -30,10 +30,10 @@ public class HttpRequestHandler implements RequestHandler{
 
         if (tunneling) {
             // In tunneling mode, this connection is simply shoveling bytes
-            readRaw((ByteBuf) msg);
+            //readRaw((ByteBuf) msg);
         } else {
             // If not tunneling, then we are always dealing with HttpObjects.
-            readHTTP((HttpObject) msg);
+            //readHTTP((HttpObject) msg);
         }
     }
     
