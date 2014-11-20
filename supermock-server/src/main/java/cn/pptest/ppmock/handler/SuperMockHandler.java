@@ -1,10 +1,6 @@
 package cn.pptest.ppmock.handler;
 
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.FullHttpRequest;
@@ -15,7 +11,6 @@ import cn.pptest.ppmock.model.HttpRequest;
 
 public class SuperMockHandler extends SimpleChannelInboundHandler<Object>{
 
-	protected static final Logger LOG = LoggerFactory.getLogger(HttpRequestHandler.class);
 	
 	private RequestHandler requestHandler;
 	private SuperMockMonitor monitor;
