@@ -22,6 +22,7 @@ import java.util.Collection;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import cn.pptest.ppmock.common.FileSource;
+import cn.pptest.ppmock.common.SingleRootFileSource;
 import cn.pptest.ppmock.setting.HttpsSettings;
 import cn.pptest.ppmock.setting.ProxySettings;
 import cn.pptest.supermock.ActivityTracker;
@@ -57,7 +58,7 @@ public class MockServerConfiguration implements Options {
 	private int connectTimeout = 40000;
 	private HostResolver serverResolver = new DefaultHostResolver();
 	private ProxySettings proxySettings;
-	private FileSource filesRoot;
+    private FileSource filesRoot = new SingleRootFileSource("src/main/resources");
 	private MockMonitor superMockMonitor;
 
 
