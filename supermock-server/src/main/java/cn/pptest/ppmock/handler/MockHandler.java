@@ -1,84 +1,46 @@
 package cn.pptest.ppmock.handler;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.HttpHeaders;
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.IOException;
 
-import org.atmosphere.annotation.Broadcast;
-import org.atmosphere.annotation.Suspend;
-import org.atmosphere.config.service.AtmosphereService;
-import org.atmosphere.config.service.Get;
-import org.atmosphere.config.service.ManagedService;
-import org.atmosphere.config.service.Message;
-import org.atmosphere.cpr.AtmosphereResource;
-import org.atmosphere.cpr.AtmosphereResourceEvent;
-import org.atmosphere.cpr.AtmosphereResourceEventListenerAdapter;
-import org.codehaus.jackson.map.ObjectMapper;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.util.Date;
+import cn.pptest.ppmock.Request;
+import cn.pptest.ppmock.RequestHandler;
+import cn.pptest.ppmock.Response;
+import cn.pptest.ppmock.model.HttpServletRequestAdapter;
+import cn.pptest.ppmock.stubbing.InMemoryStubMappings;
+import cn.pptest.ppmock.stubbing.StubMappings;
 
-@Path("/chat")
-public class MockHandler {
+
+public class MockHandler extends HttpServlet{
 
     private final Logger logger = LoggerFactory.getLogger(MockHandler.class);
-
-
-    /**
-     * Suspend the response without writing anything back to the client.
-     * @return a white space
-     */
-    @GET
-    public String index(@Context HttpServletRequest   req) {
-        return req.getHeaderNames().toString();
-    }
+    private final StubMappings stubMappings = new InMemoryStubMappings();
     
+	RequestHandler requestHandler;
+	
+	public MockHandler(RequestHandler requestHandler) {
+		this.requestHandler=requestHandler;
+	}
 
-    /**
-     * Broadcast the received message object to all suspended response. Do not write back the message to the calling connection.
-     * @param message a {@link Message}
-     * @return a {@link Response}
-     */
-    @Broadcast(writeEntity = false)
-    @GET
-    @Produces("text/plain")
-    public String broadcast(Message message) {
-        return "hello world";
-    }
-    @XmlRootElement
-    class Response {
+	@Override
+	public void service(ServletRequest httpServletRequest, ServletResponse httpServletResponse)
+			throws ServletException, IOException {
+		
+		Request request = new HttpServletRequestAdapter((HttpServletRequest)httpServletRequest);
+		logger.info("Received request: " + httpServletRequest.toString());
 
-        public String text;
-        public String author;
-        public long time;
+		Response response = requestHandler.handle(request);
+	}
 
-        public Response(String author, String text) {
-            this.author = author;
-            this.text = text;
-            this.time = new Date().getTime();
-        }
+	
 
-        public Response() {
-        }
-    }
-    @XmlRootElement
-    class Message {
-        public String author = "";
-        public String message = "";
-
-        public Message(){
-        }
-
-        public Message(String author, String message) {
-            this.author = author;
-            this.message = message;
-        }
-    }
+    
 }

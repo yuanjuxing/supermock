@@ -1,7 +1,7 @@
 package cn.pptest.ppmock;
 
 
-public interface SuperMockMonitor {
+public interface MockMonitor {
 	
 	void onRequestArrived(Request request);
 	

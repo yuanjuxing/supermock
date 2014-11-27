@@ -14,7 +14,7 @@ public interface Options {
     boolean browserProxyingEnabled();
     ProxySettings proxyVia();
     FileSource filesRoot();
-    SuperMockMonitor superMockMonitor();
+    MockMonitor superMockMonitor();
     boolean requestJournalDisabled();
 
 }

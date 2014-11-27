@@ -13,9 +13,6 @@ import org.atmosphere.annotation.Broadcast;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cn.pptest.ppmock.handler.MockHandler.Message;
-import cn.pptest.ppmock.handler.MockHandler.Response;
-
 @Path("/")
 public class AdminHandler {
 

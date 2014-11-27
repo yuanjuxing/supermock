@@ -34,7 +34,7 @@ import cn.pptest.supermock.SslEngineSource;
 import cn.pptest.supermock.TransportProtocol;
 
 
-public class SuperMockConfiguration implements Options {
+public class MockServerConfiguration implements Options {
 
 	private String name="supermock";
     private int portNumber = DEFAULT_PORT;
@@ -58,106 +58,106 @@ public class SuperMockConfiguration implements Options {
 	private HostResolver serverResolver = new DefaultHostResolver();
 	private ProxySettings proxySettings;
 	private FileSource filesRoot;
-	private SuperMockMonitor superMockMonitor;
+	private MockMonitor superMockMonitor;
 
 
 
-	public SuperMockConfiguration withName(String name) {
+	public MockServerConfiguration withName(String name) {
 		this.name = name;
 		return this;
 	}
 
-	public SuperMockConfiguration withPortNumber(int portNumber) {
+	public MockServerConfiguration withPortNumber(int portNumber) {
 		this.portNumber = portNumber;
 		return this;
 	}
 
-	public SuperMockConfiguration withHttpsPort(Integer httpsPort) {
+	public MockServerConfiguration withHttpsPort(Integer httpsPort) {
 		this.httpsPort = httpsPort;
 		return this;
 	}
 
-	public SuperMockConfiguration withKeyStorePath(String keyStorePath) {
+	public MockServerConfiguration withKeyStorePath(String keyStorePath) {
 		this.keyStorePath = keyStorePath;
 		return this;
 	}
 
-	public SuperMockConfiguration withBrowserProxyingEnabled(boolean browserProxyingEnabled) {
+	public MockServerConfiguration withBrowserProxyingEnabled(boolean browserProxyingEnabled) {
 		this.browserProxyingEnabled = browserProxyingEnabled;
 		return this;
 	}
 
-	public SuperMockConfiguration withRequestJournalDisabled(boolean requestJournalDisabled) {
+	public MockServerConfiguration withRequestJournalDisabled(boolean requestJournalDisabled) {
 		this.requestJournalDisabled = requestJournalDisabled;
 		return this;
 	}
 
-	public SuperMockConfiguration withTransportProtocol(TransportProtocol transportProtocol) {
+	public MockServerConfiguration withTransportProtocol(TransportProtocol transportProtocol) {
 		this.transportProtocol = transportProtocol;
 		return this;
 	}
 
-	public SuperMockConfiguration withAddress(InetSocketAddress address) {
+	public MockServerConfiguration withAddress(InetSocketAddress address) {
 		this.address = address;
 		return this;
 	}
 
-	public SuperMockConfiguration withAllowLocalOnly(boolean allowLocalOnly) {
+	public MockServerConfiguration withAllowLocalOnly(boolean allowLocalOnly) {
 		this.allowLocalOnly = allowLocalOnly;
 		return this;
 	}
 
-	public SuperMockConfiguration withListenOnAllAddresses(boolean listenOnAllAddresses) {
+	public MockServerConfiguration withListenOnAllAddresses(boolean listenOnAllAddresses) {
 		this.listenOnAllAddresses = listenOnAllAddresses;
 		return this;
 	}
 
-	public SuperMockConfiguration withSslEngineSource(SslEngineSource sslEngineSource) {
+	public MockServerConfiguration withSslEngineSource(SslEngineSource sslEngineSource) {
 		this.sslEngineSource = sslEngineSource;
 		return this;
 	}
 
-	public SuperMockConfiguration withAuthenticateSslClients(boolean authenticateSslClients) {
+	public MockServerConfiguration withAuthenticateSslClients(boolean authenticateSslClients) {
 		this.authenticateSslClients = authenticateSslClients;
 		return this;
 	}
 
-	public SuperMockConfiguration withProxyAuthenticator(ProxyAuthenticator proxyAuthenticator) {
+	public MockServerConfiguration withProxyAuthenticator(ProxyAuthenticator proxyAuthenticator) {
 		this.proxyAuthenticator = proxyAuthenticator;
 		return this;
 	}
 
-	public SuperMockConfiguration withChainProxyManager(ChainedProxyManager chainProxyManager) {
+	public MockServerConfiguration withChainProxyManager(ChainedProxyManager chainProxyManager) {
 		this.chainProxyManager = chainProxyManager;
 		return this;
 	}
 
-	public SuperMockConfiguration withMitmManager(MitmManager mitmManager) {
+	public MockServerConfiguration withMitmManager(MitmManager mitmManager) {
 		this.mitmManager = mitmManager;
 		return this;
 	}
 
-	public SuperMockConfiguration withTransparent(boolean transparent) {
+	public MockServerConfiguration withTransparent(boolean transparent) {
 		this.transparent = transparent;
 		return this;
 	}
 
-	public SuperMockConfiguration withIdleConnectionTimeout(int idleConnectionTimeout) {
+	public MockServerConfiguration withIdleConnectionTimeout(int idleConnectionTimeout) {
 		this.idleConnectionTimeout = idleConnectionTimeout;
 		return this;
 	}
 
-	public SuperMockConfiguration withActivityTrackers(Collection<ActivityTracker> activityTrackers) {
+	public MockServerConfiguration withActivityTrackers(Collection<ActivityTracker> activityTrackers) {
 		this.activityTrackers = activityTrackers;
 		return this;
 	}
 
-	public SuperMockConfiguration withConnectTimeout(int connectTimeout) {
+	public MockServerConfiguration withConnectTimeout(int connectTimeout) {
 		this.connectTimeout = connectTimeout;
 		return this;
 	}
 
-	public SuperMockConfiguration withServerResolver(HostResolver serverResolver) {
+	public MockServerConfiguration withServerResolver(HostResolver serverResolver) {
 		this.serverResolver = serverResolver;
 		return this;
 	}
@@ -196,7 +196,7 @@ public class SuperMockConfiguration implements Options {
 	    }
 
 	    @Override
-	    public SuperMockMonitor superMockMonitor() {
+	    public MockMonitor superMockMonitor() {
 	        return superMockMonitor;
 	    }
 

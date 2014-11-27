@@ -138,6 +138,20 @@
             <artifactId>jersey-json</artifactId>
             <version>${jersey-version}</version>
         </dependency>
-
+<dependency>
+  <groupId>org.skyscreamer</groupId>
+  <artifactId>jsonassert</artifactId>
+  <version>1.2.3</version>
+</dependency>
+<dependency>
+  <groupId>com.jayway.jsonpath</groupId>
+  <artifactId>json-path</artifactId>
+  <version>0.8.1</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.httpcomponents</groupId>
+  <artifactId>httpclient</artifactId>
+  <version>4.2.3</version>
+</dependency>
 	</dependencies>
 </project>

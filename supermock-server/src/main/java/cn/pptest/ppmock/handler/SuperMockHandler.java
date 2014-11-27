@@ -5,7 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.FullHttpRequest;
 import cn.pptest.ppmock.RequestHandler;
-import cn.pptest.ppmock.SuperMockMonitor;
+import cn.pptest.ppmock.MockMonitor;
 import cn.pptest.ppmock.model.DefaultHttpRequest;
 import cn.pptest.ppmock.model.HttpRequest;
 
@@ -13,14 +13,14 @@ public class SuperMockHandler extends SimpleChannelInboundHandler<Object>{
 
 	
 	private RequestHandler requestHandler;
-	private SuperMockMonitor monitor;
+	private MockMonitor monitor;
 	
 	public SuperMockHandler() {
 
 	}
 	
 	public SuperMockHandler(RequestHandler requestHandler,
-			SuperMockMonitor monitor) {
+			MockMonitor monitor) {
 		super();
 		this.requestHandler = requestHandler;
 		this.monitor = monitor;
@@ -29,7 +29,7 @@ public class SuperMockHandler extends SimpleChannelInboundHandler<Object>{
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg)
 			throws Exception {
-		requestHandler.handle(msg);
+		//requestHandler.handle(msg);
 		//handleRequest((FullHttpRequest)msg);
 		
 	}
