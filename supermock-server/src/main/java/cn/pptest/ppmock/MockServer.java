@@ -64,7 +64,7 @@ public class MockServer implements Server{
 	}
 	
     private MappingsLoader makeDefaultMappingsLoader() {
-        FileSource mappingsFileSource = fileSource.child("");
+    	FileSource mappingsFileSource = fileSource.child("mappings");
         if (mappingsFileSource.exists()) {
             return new JsonFileMappingsLoader(mappingsFileSource);
         } else {

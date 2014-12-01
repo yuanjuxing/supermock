@@ -30,7 +30,8 @@ import static com.google.common.collect.Iterables.transform;
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Sets.newHashSet;
 
-
+@JsonSerialize(using = HttpHeadersJsonSerializer.class)
+@JsonDeserialize(using = HttpHeadersJsonDeserializer.class)
 public class HttpHeaders {
 
     private final Multimap<CaseInsensitiveKey, String> headers;
