@@ -1,0 +1,20 @@
+{
+  "request" : {
+    "url" : "/v.gif?mod=nav%3Anav&submod=nav_remind_tip&utype=4&superver=pack&portrait=3c847975616e6a7578696e67d103&mlogid=&glogid=2691045480&type=2011&pid=315&version=PCHome&terminal=PC&_r=0.6817848032806069&m=nav%3Anav_rpShow&logitemid=0101100000&showType=normal&userType=normal&navList=%5B%7B%22name%22%3A%22%E7%BB%A7%E6%89%BF%E8%80%85%E4%BB%AC%22%2C%22url%22%3A%22http%3A%2F%2Fv.baidu.com%2Fv%3Fword%3D%25BC%25CC%25B3%25D0%25D5%25DF%25C3%25C7%22%2C%22navTag%22%3A%22rp-0-101-20140126%22%2C%22rpTag%22%3A%22rp-0-101%22%7D%5D&isMulti=false&count=1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 302,
+    "bodyFileName" : "body-v.gif-i5t4F.json",
+    "headers" : {
+      "Date" : "Tue, 28 Jan 2014 05:40:45 GMT",
+      "Server" : "Apache",
+      "Location" : "http://www.baidu.com/search/error.html",
+      "Cache-Control" : "max-age=86400",
+      "Expires" : "Wed, 29 Jan 2014 05:40:45 GMT",
+      "Content-Length" : "222",
+      "Connection" : "Keep-Alive",
+      "Content-Type" : "text/html; charset=iso-8859-1"
+    }
+  }
+}

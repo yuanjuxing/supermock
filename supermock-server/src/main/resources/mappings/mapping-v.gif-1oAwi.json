@@ -1,0 +1,20 @@
+{
+  "request" : {
+    "url" : "/v.gif?mod=superpage%3Alib&submod=exception&utype=4&superver=pack&portrait=3c847975616e6a7578696e67d103&mlogid=&glogid=2691045480&type=2011&pid=315&version=PCHome&terminal=PC&_r=0.47910337755456567&m=superpage%3Alib_jsErrorCaptured&logitemid=2000100001&key=sysOnError&msg=Uncaught%2520SyntaxError%253A%2520Unexpected%2520token%2520%253C&url=http%3A%2F%2Fwww.baidu.com%2Fsearch%2Ferror.html&line=1&status=fully_load&errType=error",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 302,
+    "bodyFileName" : "body-v.gif-1oAwi.json",
+    "headers" : {
+      "Date" : "Tue, 28 Jan 2014 05:40:48 GMT",
+      "Server" : "Apache",
+      "Location" : "http://www.baidu.com/search/error.html",
+      "Cache-Control" : "max-age=86400",
+      "Expires" : "Wed, 29 Jan 2014 05:40:48 GMT",
+      "Content-Length" : "222",
+      "Connection" : "Keep-Alive",
+      "Content-Type" : "text/html; charset=iso-8859-1"
+    }
+  }
+}

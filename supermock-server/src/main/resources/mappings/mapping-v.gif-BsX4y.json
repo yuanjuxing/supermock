@@ -1,0 +1,20 @@
+{
+  "request" : {
+    "url" : "/v.gif?mod=superpage%3Anews&submod=news&utype=4&superver=pack&portrait=3c847975616e6a7578696e67d103&mlogid=&glogid=2691045480&type=2011&pid=315&version=PCHome&terminal=PC&_r=0.841779874637723&m=superpage%3Anews_newUserShow&logitemid=0200400000&opType=newsShow&hotversion=false",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 302,
+    "bodyFileName" : "body-v.gif-BsX4y.json",
+    "headers" : {
+      "Date" : "Tue, 28 Jan 2014 05:40:48 GMT",
+      "Server" : "Apache",
+      "Location" : "http://www.baidu.com/search/error.html",
+      "Cache-Control" : "max-age=86400",
+      "Expires" : "Wed, 29 Jan 2014 05:40:48 GMT",
+      "Content-Length" : "222",
+      "Connection" : "Keep-Alive",
+      "Content-Type" : "text/html; charset=iso-8859-1"
+    }
+  }
+}

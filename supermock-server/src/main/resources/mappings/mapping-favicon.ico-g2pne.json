@@ -1,0 +1,17 @@
+{
+  "request" : {
+    "url" : "/favicon.ico",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 404,
+    "bodyFileName" : "body-favicon.ico-g2pne.json",
+    "headers" : {
+      "Server" : "Tengine",
+      "Date" : "Wed, 02 Apr 2014 11:20:33 GMT",
+      "Content-Type" : "text/html",
+      "Content-Length" : "592",
+      "Connection" : "keep-alive"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "request" : {
+    "url" : "/_admin",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 404,
+    "bodyFileName" : "body-_admin-lz56e.json",
+    "headers" : {
+      "Server" : "Tengine",
+      "Date" : "Mon, 27 Oct 2014 10:14:19 GMT",
+      "Content-Type" : "text/html",
+      "Content-Length" : "244",
+      "Connection" : "keep-alive"
+    }
+  }
+}
