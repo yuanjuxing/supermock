@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import cn.pptest.ppmock.common.FileSource;
 import cn.pptest.ppmock.handler.AdminHandler;
 import cn.pptest.ppmock.handler.MockHandler;
+import cn.pptest.ppmock.handler.MonitorHandler;
 import cn.pptest.ppmock.handler.StubRequestHandler;
 import cn.pptest.ppmock.model.ProxyResponseRenderer;
 import cn.pptest.ppmock.model.StubResponseRenderer;
@@ -100,7 +101,8 @@ public class MockServer implements Server{
 		Config.Builder b = new Config.Builder();
 		b.resource("/*",new MockHandler(stubRequestHandler))
         .resource("/_admin/*",AdminHandler.class)
-        .resource("/_monitor/*",AdminHandler.class)
+        .resource("/_monitor/*",MonitorHandler.class)
+        .resource("src/main/resources")
         .port(options.portNumber()).host("127.0.0.1")
         .initParam("org.atmosphere.websocket.messageContentType","application/json")
         .initParam("org.atmosphere.websocket.messageMethod","POST")

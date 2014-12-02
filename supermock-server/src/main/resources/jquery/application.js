@@ -8,7 +8,7 @@ $(function () {
     var author = null;
     var logged = false;
     var socket = $.atmosphere;
-    var request = { url: document.location.toString() + 'chat',
+    var request = { url: '_monitor/abc',
                     contentType : "application/json",
                     logLevel : 'debug',
                     transport : 'websocket' ,
