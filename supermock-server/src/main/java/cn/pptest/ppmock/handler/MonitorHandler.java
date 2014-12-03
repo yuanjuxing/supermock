@@ -9,11 +9,12 @@ import org.atmosphere.cpr.AtmosphereResource;
 import org.atmosphere.cpr.AtmosphereResourceEvent;
 import org.atmosphere.cpr.AtmosphereResponse;
 @AtmosphereHandlerService(path="/_monitor/*")
+
 public class MonitorHandler implements AtmosphereHandler {
 
     @Override
     public void onRequest(AtmosphereResource r) throws IOException {
-        r.getBroadcaster().broadcast(r.getRequest().getReader().readLine());
+        r.getBroadcaster().broadcast("connect");
     }
 
     @Override

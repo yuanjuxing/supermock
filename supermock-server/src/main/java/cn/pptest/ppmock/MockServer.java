@@ -101,7 +101,7 @@ public class MockServer implements Server{
 		Config.Builder b = new Config.Builder();
 		b.resource("/*",new MockHandler(stubRequestHandler))
         .resource("/_admin/*",AdminHandler.class)
-        .resource("/_monitor/*",MonitorHandler.class)
+        .resource("/socket.io/*",MonitorHandler.class)
         .resource("src/main/resources")
         .port(options.portNumber()).host("127.0.0.1")
         .initParam("org.atmosphere.websocket.messageContentType","application/json")
